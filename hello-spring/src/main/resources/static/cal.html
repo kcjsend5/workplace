@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 계산기</title>
+    <style>
+        .btn{
+            padding: 3px 20px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        #btn1{color:red;}
+        #btn2{color:yellow;}
+        #btn3{color:green;}
+        #btn4{color:blue;}
+        #cal{
+            padding: 15px 20px;
+            border-radius:10px;
+            margin:auto;
+            width:20%;
+            background-color: sandybrown;
+        }
+    </style>
+    <script>
+        function calculate1()
+        {
+            if(document.form1.num1.value == ""||document.form1.num2.value == "")
+            {
+                alert("정수를 입력하세요.");
+            }
+            else
+            {
+                let result = document.getElementById("result");
+                let num = Number(document.form1.num1.value) + Number(document.form1.num2.value);
+                result.innerHTML = "계산결과: "+document.form1.num1.value+"+"+document.form1.num2.value+"="+num;
+                result.style.color = "red";
+            }
+        }
+        function calculate2()
+        {
+            if(document.form1.num1.value == ""||document.form1.num2.value == "")
+            {
+                alert("정수를 입력하세요.");
+            }
+            else
+            {
+                let result = document.getElementById("result");
+                let num = Number(document.form1.num1.value) - Number(document.form1.num2.value);
+                result.innerHTML = "계산결과: "+document.form1.num1.value+"-"+document.form1.num2.value+"="+num;
+                result.style.color = "yellow";
+            }
+        }
+        function calculate3()
+        {
+            if(document.form1.num1.value == ""||document.form1.num2.value == "")
+            {
+                alert("정수를 입력하세요.");
+            }
+            else
+            {
+                let result = document.getElementById("result");
+                let num = Number(document.form1.num1.value) * Number(document.form1.num2.value);
+                result.innerHTML = "계산결과: "+document.form1.num1.value+"*"+document.form1.num2.value+"="+num;
+                result.style.color = "green";
+            }
+        }
+        function calculate4()
+        {
+            if(document.form1.num1.value == ""||document.form1.num2.value == "")
+            {
+                alert("정수를 입력하세요.");
+            }
+            else
+            {
+                let result = document.getElementById("result");
+                let num = Number(document.form1.num1.value) / Number(document.form1.num2.value);
+                result.innerHTML = "계산결과: "+document.form1.num1.value+"/"+document.form1.num2.value+"="+num;
+                result.style.color = "blue";
+            }
+        }
+        function delete1()
+        {
+            let result = document.getElementById("result");
+            result.innerHTML = "계산결과:";
+            result.style.color = "black"
+            document.form1.num1.value = ""
+            document.form1.num2.value = ""
+        }
+    </script>
+</head>
+<body>
+    <h1 style = "text-align:center">자바스크립트 계산기</h1>
+    <div id="cal">
+        <form name = "form1">
+        <hr>
+            <input name="num1" type = "text" placeholder="정수입력" style = "text-align:center"><br>
+            <input name="num2" type = "text" placeholder="정수입력" style = "text-align:center">
+            <hr>
+        </form>
+        <button class= "btn" id="btn1" type="button" onClick="calculate1()">+</button>
+        <button class= "btn" id="btn2" type="button" onClick="calculate2()">-</button>
+        <button class= "btn" id="btn3" type="button" onClick="calculate3()">*</button>
+        <button class= "btn" id="btn4" type="button" onClick="calculate4()">/</button>
+        <hr>
+        <label id="result">계산결과:</label>
+        <button class= "btn" id = "delete" type="button" style="float:right" onclick="delete1()">삭제</button>
+    </div>
+</body>
+</html>

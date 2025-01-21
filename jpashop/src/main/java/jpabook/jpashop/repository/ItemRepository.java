@@ -27,5 +27,7 @@ public class ItemRepository {
 
     public List<Item> findAll(){
         return em.createQuery("select i from Item i",Item.class).getResultList();
-    }
+    }//페이징 API: 한번에 모든 데이터를 전송하는게 아닌 여러개의 페이지로 나누어 데이터를 전송하는것
+     //스프링 JPA 페이징 API:
+     //setFirstResult(int startPosition) : 조회 시작 위치(0부터 시작) setMaxResults(int maxResult) : 조회할 데이터 수
 }

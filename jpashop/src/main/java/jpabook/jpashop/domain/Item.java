@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)//DB에는 상속관계가 없으므로 어노테이션으로 형태를 지정
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)//DB에는 상속관계가 없으므로 어노테이션으로 형태를 지정. 현재는 부모 클래스와 자식 클래스를 테이블 하나로 묶어서 저장
 @DiscriminatorColumn(name = "dtype")//부모 클래스임을 알림
 @Getter @Setter
 public class Item {

@@ -11,7 +11,14 @@ spring:
       hibernate:
         # show_sql: true
         format_sql: true
+        default_batch_fetch_size: 1000
+        #글로벌 설정
+        #이 옵션을 사용하면 컬렉션이나, 프록시 객체를 한꺼번에 설정한 size 만큼 IN 쿼리로 조회한다.
 
 logging.level:
   org.hibernate.SQL: debug
 # org.hibernate.type: trace
+# JPA와 DB를 연결시키는 파일
+# ddl-auto는 개발 중에는 create 또는 update, 운영 중에는 validate 또는 none 또는 none
+# create는 테이블을 삭제하고 다시 생성한다.
+# validate는 엔티티와 테이블이 정상 매핑 되었는지만 확인
